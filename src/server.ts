@@ -4,9 +4,11 @@ import routes from './routes';
 
 const app = express();
 
-app.get('/', (request, response) =>
-  response.json({ message: 'helaaa sfdfsdfsdflows' }),
-);
+// allowing json
+app.use(express.json());
+
+// passando todas as rotas para serem escutadas
+app.use(routes);
 
 app.listen(3333, () => {
   console.log('Mãe ta on 🤸🏽‍♀️ on port 3333!');
